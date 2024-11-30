@@ -1,0 +1,48 @@
+{% extends "userhead.html" %}
+{% load static %}
+{% block content %}
+
+{% comment %} <H2 style="color:#13bef0">Manage Complaints</H2> {% endcomment %}
+<h1 class="text-center mb-5 text-white" style="text-shadow: 2px 2px 1px black;">Manage Complaints</h1>
+
+<hr style="color:#13bef0"/>
+
+<form class="form-horizontal"  method="post" action="{% url 'Manage_complaints' %}">
+    {% csrf_token %}
+    <table class="table table-striped w-50 mx-auto bg-white">
+        <tr>
+            <th>Subjects</th>
+            <th><input type="text" class="form-control" name="t1" required placeholder="Subjects"/></th>
+        </tr>
+        <tr>
+            <th>message</th>
+            <th><textarea class="form-control" name="t2" required placeholder="message"></textarea></th>
+        </tr>
+        <tr>
+            <th colspan="2" style="text-align: right;">
+<button class="btn btn-sucesss" type="submit">Post</button>
+            </th>
+        </tr>
+        </table>
+        <br>
+        <table class="table table-striped w-50 mx-auto bg-white">
+            <tr>
+    <th>Sl.No.</th>
+    <th>Subject</th>
+    <th>Message</th>
+    <th>Complaint Date</th>
+    <th>Reply</th>
+    
+</tr>
+{% for datas in data %}
+<tr>
+    <td>{{ forloop.counter }}</td>
+    <td>{{datas.Complaint_subject}}</td>
+    <td>{{datas.Complaint_message}}</td>
+    <td>{{datas.Complaint_date}}</td>
+    <td>{{datas.Complaint_reply}}</td>
+    
+</tr>
+{% endfor %}
+        </table>
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends "userhead.html" %}
+{% load static %}
+{% block content %}
+
+
+<h3 style="color: white;">{{msg|title}}</h3>
+<h1 class="text-center mb-5 text-white" style="text-shadow: 2px 2px 1px black;">Schemes / Applications</h1>
+<table class="table table-striped w-75 mx-auto bg-white">
+<thead>
+<tr >
+                            <th>Sl.no</th>
+                            
+                            <th>Scheme Name</th>
+                            <th>Scheme details</th>
+                            <!-- <th>Infrastructure cost</th> -->
+                          
+                        
+                            <th colspan="2">Action</th>
+                          </tr>
+                          </thead>
+        
+        <tbody>
+           
+            {% for datas in data %}
+                                
+                                <tr>
+                                <td>{{ forloop.counter }}</td>
+                                 <td>{{datas.scheme_name}}</td>
+                                <td>{{datas.scheme_details}}</td>
+                                <!-- <td>{{datas.Infrastructure_cost}}</td> -->
+                                
+                                  <td><a class="btn-primary btn" href="{% url 'apply_scheme' %}?id={{datas.scheme_id}}">Apply</a></td>
+                                
+                           
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+{% endblock %}

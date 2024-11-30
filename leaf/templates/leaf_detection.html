@@ -1,0 +1,49 @@
+{% extends "userhead.html" %}
+{% load static %}
+{% block content %}
+
+  
+<h1 class="text-center mb-5 text-white" style="text-shadow: 2px 2px 1px black;">Predict leaf Disease</h1>
+<hr style="color:#13bef0"/>
+
+                <form class="form-horizontal" enctype="multipart/form-data" method="post" action="{% url 'leaf_detection' %}">
+                    {% csrf_token %}
+                    <table class="table table-striped w-50 mx-auto bg-white">
+                       
+                        <tr><td>
+                           Choose Leaf </td><td>
+                                <select name="f1" required id="f1" class="form-control" >
+                                    <option value="">-select-</option>
+                                    {%  for d in leaf %}
+                                    <option value="{{d.Leaf_id}}">{{d.Leaf_name}}</option>
+                                    {% endfor %}
+        
+                                </select>
+                                </td></tr>
+                  <tr><td>
+                    Upload image </td><td>
+                            <input type="file" class="form-control" name="t1" required id="focusedinput" >
+                        </td></tr>
+                        
+                        <tr><td colspan="2" style="text-align: center;">
+    
+
+
+                            <button class="btn-success btn btn-lg" type="submit" name="submit">Predict</button>
+                            <input type="reset" value="Reset" class=" btn btn-warning btn-lg"/>
+                        
+                        </td></tr>
+                        </table>
+                        </form>
+
+                        <br/>
+                      
+                        {% if data != "" %}
+                        <div class="w-50 mx-auto bg-white" style="text-align:center; ">
+                            <h1>PREDICTED RESULT</h1>
+                            <h2>{{data.Des_name}}</h2>
+                            <p style="color: black;">{{data.Des_Details}}</p>
+                            
+                        </div>
+                        {% endif %}
+{% endblock %}

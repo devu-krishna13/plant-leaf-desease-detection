@@ -1,0 +1,58 @@
+{% extends "staffhead.html" %}
+{% load static %}
+{% block content %}
+<!---
+<H2 style="color:#13bef0">Generate model</H2>
+<hr style="color:#13bef0"/>
+<a href="{% url 'Generate' %}">Generate</a>-->
+
+                <form class="form-horizontal" enctype="multipart/form-data" method="post" action="{% url 'ManageLeaf' %}">
+                    {% csrf_token %}
+                    <table class="table table-responsive table-striped">
+                  
+                  <tr><td>
+                        Leaf</td><td>
+                            <input type="text" class="form-control" name="t1" required id="focusedinput" placeholder="leaf Name">
+                        </td></tr>
+                        <tr><td>
+                            Model File</td><td>
+                                <input type="file" class="form-control" name="t2" required id="focusedinput" placeholder="Model files">
+                            </td></tr>
+                        <tr><td colspan="2" style="text-align: center;">
+    
+
+
+                            <button class="btn-success btn btn-lg" type="submit" name="submit">Update</button>
+                            <input type="reset" value="Reset" class=" btn btn-warning btn-lg"/>
+                        
+                        </td></tr>
+                        </table>
+                        </form>
+
+
+                        <h2>Leaf List</h2>
+                        <table class="table table-responsive table-striped">
+                      <thead>
+                   <tr >
+                                        <th>Sl.no</th>
+                                        <th>Leaf </th>
+                                        <th>Action</th>
+                                      </tr>
+                                      </thead>
+                    
+                    <tbody>
+                       
+                        {% for datas in data %}
+                                            
+                                            <tr>
+                                            <td>{{ forloop.counter }}</td>
+                                            <td>{{datas.Leaf_name}}</td>
+                                       
+                                              <td><a class="btn-danger btn" href="{% url  'delete_leaf' %}?id={{datas.Leaf_id}}">Remove</a></td>
+                                       
+                                            </tr>
+                                            {% endfor %}
+                                        </tbody>
+                                    </table>
+                      
+{% endblock %}

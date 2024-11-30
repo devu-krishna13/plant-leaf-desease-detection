@@ -1,0 +1,37 @@
+{% extends "indexhead.html" %}
+{% load static %}
+{% block content %}
+
+<div class="contact">
+    <div class="container">
+        <div class="w3ls-title">
+            <h3 class="agileits-title">AGRO-WIZ</h3>
+        </div>
+
+
+
+<div class="contact_wthreerow agileits-w3layouts">
+    <div class="col-md-3"></div>
+<div class="col-md-6 w3l_contact_form">
+                <h4>Login Form</h4>
+                <form name="f1" action="{% url 'login' %}" method="post">
+                    {% csrf_token %}
+                    <input type="text" name="t1" placeholder="User Name" 
+
+                    onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'User Name';}" required="" 
+                    class="form-control">
+                    <input type="password" 
+                    style="margin-top: 10px;"
+                    class="form-control" name="t2" placeholder="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}" required="">
+                                            <br>    <br>
+                    <input type="submit" name="b1" value="Submit">
+                </form>
+            </div>
+
+   <div class="clearfix"> </div>
+        </div>
+
+</div>
+</div>
+
+{% endblock %}

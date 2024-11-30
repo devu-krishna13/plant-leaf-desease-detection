@@ -1,0 +1,45 @@
+{% extends "userhead.html" %}
+{% load static %}
+{% block content %}
+<style>
+  body{
+    background: url('{% static "web/images/banner3.jpg" %}');
+    background-size: cover;
+    background-position: center;
+    background-repeat:no-repeat;
+    min-height: 90vh;
+  }
+</style>
+<p style="color: white;">{{msg}}</p>
+  <h1 class="text-center mb-5 text-white" style="text-shadow: 2px 2px 1px black;">Booked Infrastructure List</h1>
+            <table class="table table-striped w-75 mx-auto bg-white">
+          <thead>
+       <tr class="mx-auto">
+                            <th>Sl.no</th>
+                            
+                            <th>Infrastructure Name</th>
+                            <th>Infrastructure details</th>
+                            <th>Infrastructure cost</th>
+                            <th>Booking Status</th>
+                        
+                          </tr>
+                          </thead>
+        
+        <tbody>
+           
+            {% for datas in data %}
+                                
+                                <tr>
+                                <td>{{ forloop.counter }}</td>
+                                 <td>{{datas.infrastructure.Infrastructure_name}}</td>
+                                <td>{{datas.infrastructure.Infrastructure_det}}</td>
+                                <td>{{datas.infrastructure.Infrastructure_cost}}</td>
+                                <td>{{datas.status}}</td>
+                                
+                           
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                      </div>
+{% endblock %}

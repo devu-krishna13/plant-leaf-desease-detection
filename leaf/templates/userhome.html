@@ -1,0 +1,48 @@
+{% extends "userhead.html" %}
+{% load static %}
+{% block content %}
+<style>
+    #main{
+        animation: main 3s ease-in-out 1s infinite ;
+    }
+    @keyframes main{
+        0%{
+            border-top: 2px solid white ;
+            font-size: 30px;
+        }
+        25%{
+            border-top: 2px solid white ;
+            font-size: 32px;
+        }
+        50%{
+            border-left: 2px solid white ;
+            font-size: 33px;
+        }
+        75%{
+            border-bottom: 2px solid white ;
+            font-size: 32px;
+        }
+        100%{
+            border-right: 2px solid white ;
+            font-size: 30px;
+        }
+    }
+    #btn:hover{
+        border: 2px solid rgb(3, 96, 3);
+        background-color: transparent;
+    }
+    img{
+        filter: contrast(120%);
+    }
+ 
+   
+</style>
+<div class="hero" style="display: flex;justify-content: center;background-image: url('{% static 'web/images/2.jpg' %}');">
+    <div class="h2 text-white my-auto text-center p-3" id="main" style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+        <img src="{% static 'web/images/leaf3.png' %}" alt="" style="width:25%"><br>
+        Are you looking remedies for LEAF DISEASE ? <br><br>
+        <button class="btn-lg btn-dark " id="btn" style="width:250px;box-shadow: 2px 2px 3px black;text-shadow: 2px 2px 3px black;"><a href="leaf_detection" class="text-white" style="font-size: 30px;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">click here</a></button>
+    </div>
+    
+</div>
+{% endblock %}

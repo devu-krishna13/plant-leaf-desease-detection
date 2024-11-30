@@ -1,0 +1,37 @@
+{% extends "adminhead.html" %}
+{% load static %}
+{% block content %}
+<h2>Scheme for Approval</h2>
+            <table class="table table-responsive table-striped">
+          <thead>
+       <tr >
+                            <th>Sl.no</th>
+                            
+                            <th>Scheme Name</th>
+                            <th>Scheme details</th>
+                            <th>User</th>
+                            <th>Status</th>
+                            <th colspan="2">Action</th>
+                          </tr>
+                          </thead>
+        
+        <tbody>
+           
+            {% for datas in data %}
+                                
+                                <tr>
+                                <td>{{ forloop.counter }}</td>
+                                 <td>{{datas.scheme.scheme_name}}</td>
+                                <td>{{datas.scheme.scheme_details}}</td>
+                                <td>{{datas.user.User_name}}</td>
+                                <td>{{datas.status}}</td>
+                                {% if datas.status == "waiting for approval" %}
+                                <td><a class="btn-primary btn" href="{% url 'approve_scheme' %}?id={{datas.booking_id}}">Approve</a></td>
+                                <td><a class="btn-danger btn" href="{% url 'reject_scheme' %}?id={{datas.booking_id}}">Reject</a></td>
+                                {% endif %}
+                           
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+{% endblock %}

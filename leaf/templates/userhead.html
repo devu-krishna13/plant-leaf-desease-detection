@@ -1,0 +1,108 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'user/fonts/icomoon/style.css' %}">
+
+    <link rel="stylesheet" href="{% static 'user/css/owl.carousel.min.css' %}">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'user/css/bootstrap.min.css' %}">
+    
+    <!-- Style -->
+    <link rel="stylesheet" href="{% static 'user/css/style.css' %}">
+
+    <title>Agro-wiz</title>
+  </head>
+  <body>
+
+    <style>
+      body{
+        background: url('{% static "web/images/banner3.jpg" %}');
+        background-size: cover;
+        background-position: center;
+        background-repeat:no-repeat;
+        min-height: 90vh;
+      }
+    </style>
+    <div class="site-mobile-menu site-navbar-target">
+        <div class="site-mobile-menu-header">
+          <div class="site-mobile-menu-close mt-3">
+            <span class="icon-close2 js-menu-toggle"></span>
+          </div>
+        </div>
+        <div class="site-mobile-menu-body"></div>
+      </div>
+
+
+
+
+      <header class="site-navbar js-sticky-header site-navbar-target" role="banner">
+
+        <div class="container">
+          <div class="row align-items-center position-relative">
+
+
+            <div class="site-logo">
+              <h1><a  href="{% url 'index' %}">AGRO-WIZ</a></h1>
+                        </div>
+
+            <div class="col-12">
+              <nav class="site-navigation text-right ml-auto " role="navigation">
+
+                <ul class="site-menu main-menu js-clone-nav ml-auto d-none d-lg-block">
+                  <li><a href="UserHome" class="nav-link">Home</a></li>
+
+                  <li class="has-children">
+                    <a  class="nav-link">Infrastructure</a>
+                    <ul class="dropdown arrow-top">
+                      <li><a href="User_List_infra" class="nav-link">Infrastructure</a></li>
+                      <li><a href="list_booked_infra" class="nav-link">Infrastructure Booking</a></li>
+                    </ul>
+                  </li>
+
+                  <li class="has-children">
+                    <a href="#about-section" class="nav-link">Scheme/Applications</a>
+                    <ul class="dropdown arrow-top">
+                      <li><a href="user_list_scheme" class="nav-link">Scheme/Applications</a></li>
+                      <li><a href="list_applied_scheme" class="nav-link">Applied Scheme/Applications</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="leaf_detection" class="nav-link">Predict Disease</a></li>
+                  <li><a href="Manage_complaints" class="nav-link">Enqueries</a></li>
+                  <li class="has-children">
+                    <a href="#about-section" class="nav-link">Settings</a>
+                    <ul class="dropdown arrow-top">
+                      <li><a href="Privacy" class="nav-link">Privacy</a></li>
+                      <li><a href="Logout" class="nav-link">Logout</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </nav>
+            </nav>
+
+            </div>
+
+            <div class="toggle-button d-inline-block d-lg-none"><a href="#" class="site-menu-toggle py-5 js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
+
+          </div>
+        </div>
+
+      </header>
+
+{% block content %}{% endblock content %}  
+
+
+    <script src="{% static 'user/js/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'user/js/popper.min.js' %}"></script>
+    <script src="{% static 'user/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'user/js/jquery.sticky.js' %}"></script>
+    <script src="{% static 'user/js/main.js' %}"></script>
+  </body>
+</html>

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="">
+
+	{% load static %}
+
+	<meta name="author" content="">
+	<link rel="icon" type="image/png" sizes="16x16" href='{% static "admin/plugins/images/favicon.png" %}'>
+	<title>Admin Dashboard</title>
+	<!-- Bootstrap Core CSS -->
+	<link href='{% static "admin/eliteadmin-university/bootstrap/dist/css/bootstrap.min.css" %}' rel="stylesheet">
+	<!-- Menu CSS -->
+	<link href='{% static "admin/plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.css" %}' rel="stylesheet">
+	<link href='{% static "admin/plugins/bower_components/bootstrap-datepicker/bootstrap-datepicker.min.css" %}' rel="stylesheet" type="text/css" />
+	<!-- animation CSS -->
+	<link href='{% static "admin/eliteadmin-university/css/animate.css" %}' rel="stylesheet">
+	<!-- Custom CSS -->
+	<link href='{% static "admin/eliteadmin-university/css/style.css" %}' rel="stylesheet">
+	<!-- color CSS -->
+	<link href='{% static "admin/eliteadmin-university/css/colors/blue.css" %}' id="theme" rel="stylesheet">
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+</script>
+</head>
+
+<body>
+	<!-- Preloader -->
+
+	<div class="preloader">
+		<div class="cssload-speeding-wheel"></div>
+	</div>
+
+	<div id="wrapper">
+		<!-- Navigation -->
+		<nav class="navbar navbar-default navbar-static-top m-b-0">
+			<div class="navbar-header"> <a class="navbar-toggle hidden-sm hidden-md hidden-lg " href="javascript:void(0)" data-toggle="collapse" data-target=".navbar-collapse"><i class="ti-menu"></i></a>
+				<div class="top-left-part"><a class="logo" href="login"><b><img src='{% static "admin//plugins/images/eliteadmin-logo.png"%}' alt="home" /></b><span class="hidden-xs"><strong>Leaf </strong></span></a></div>
+				<ul class="nav navbar-top-links navbar-left hidden-xs">
+					<li><a href="javascript:void(0)" class="open-close hidden-xs waves-effect waves-light"><i class="icon-arrow-left-circle ti-menu"></i></a></li>
+				</ul>
+				<ul class="nav navbar-top-links navbar-right pull-right">
+				
+				<!-- /.dropdown -->
+			
+			<!-- /.dropdown -->
+
+			<li class="dropdown">
+				<a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#"> <img src='{% static "admin//plugins/images/users/1.jpg"%}' alt="user-img" width="36" class="img-circle"><b class="hidden-xs">Admin</b> </a>
+				<ul class="dropdown-menu dropdown-user animated flipInY">
+					<li><a href="Privacy"><i class="ti-settings"></i>  Privacy Setting</a></li>
+					<li><a href="Logout"><i class="fa fa-power-off"></i> Logout</a></li>
+				</ul>
+				<!-- /.dropdown-user -->
+			</li>
+
+			<!--<li class="right-side-toggle"> <a class="waves-effect waves-light" href="javascript:void(0)"><i class="ti-settings"></i></a></li>
+		--><!-- /.dropdown -->
+		</ul>
+	</div>
+
+</nav>
+<!-- Left navbar-header -->
+<div class="navbar-default sidebar" role="navigation">
+	<div class="sidebar-nav navbar-collapse slimscrollsidebar">
+		<ul class="nav" id="side-menu">
+			<li class="sidebar-search hidden-sm hidden-md hidden-lg">
+				<!-- input-group -->
+				<div class="input-group custom-search-form">
+					<input type="text" class="form-control" placeholder="Search..."> <span class="input-group-btn">
+						<button class="btn btn-default" type="button"> <i class="fa fa-search"></i> </button>
+					</span> </div>
+					<!-- /input-group -->
+				</li>
+				<li class="user-pro">
+					<a href="index" class="waves-effect"><img src='{% static "admin//plugins/images/users/1.jpg"%}' alt="user-img" class="img-circle"> <span class="hide-menu">Admin Panel<span class="fa arrow"></span></span>
+					</a>
+
+				</li>
+				<li class="user-pro">
+					<a href="AdminHome" class="waves-effect"> 	<i class="icon-home p-r-10"></i><span class="hide-menu">Home</span>
+					</a>
+
+				</li>
+				<li> <a href="javascript:void(0);" class="waves-effect">
+					
+					<i class="icon-user p-r-10"></i>
+					 <span class="hide-menu"> Staff <span class="fa arrow"></span>
+					</span></a>
+					<ul class="nav nav-second-level">
+						<li> <a href="Appoint_Staff">Appoint Staff</a></li>
+						<li> <a href="Our_Staff">Our Staff</a></li>
+					</ul>
+				</li>
+				<li> <a href="javascript:void(0);" class="waves-effect">
+					
+					<i class="icon-user p-r-10"></i>
+					 <span class="hide-menu"> scheme <span class="fa arrow"></span>
+					</span></a>
+					<ul class="nav nav-second-level">
+						<li> <a href="add_scheme">Add scheme</a></li>
+						<li> <a href="list_scheme">List scheme</a></li>
+						<li> <a href="list_staffapproved_scheme">Verified scheme</a></li>
+
+					</ul>
+				</li>
+<li></li>
+
+				<li> <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-book p-r-10"></i> <span class="hide-menu"> USERS <span class="fa arrow"></span></span></a>
+					<ul class="nav nav-second-level">
+						<li> <a href="Our_Users">User List</a></li>
+						<li> <a href="complaints">User Queries</a></li>
+
+					</ul>
+				</li>
+
+				<li> <a href="javascript:void(0);" class="waves-effect">
+					<i class="ti-settings p-r-10"></i> <span class="hide-menu">Settings <span class="fa arrow"></span></span></a>
+					<ul class="nav nav-second-level">
+						<li> <a href="Privacy"> Privacy</a></li>
+						<li> <a href="Logout">logout</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div id="page-wrapper">
+		<div class="container-fluid">
+			<div class="row">
+                <div class="col-sm-12">
+					<br/>
+	{% block content %}
+	{% endblock %}
+	</div></div>
+</div></div>
+<!---<div class="right-sidebar">
+		<div class="slimscrollright">
+			<div class="rpanel-title"> Service Panel <span><i class="ti-close right-side-toggle"></i></span> </div>
+			<div class="r-panel-body">
+				<ul>
+					<li><b>Layout Options</b></li>
+					<li>
+						<div class="checkbox checkbox-info">
+							<input id="checkbox1" type="checkbox" class="fxhdr">
+							<label for="checkbox1"> Fix Header </label>
+						</div>
+					</li>
+					<li>
+						<div class="checkbox checkbox-warning">
+							<input id="checkbox2" type="checkbox" class="fxsdr">
+							<label for="checkbox2"> Fix Sidebar </label>
+						</div>
+					</li>
+					<li>
+						<div class="checkbox checkbox-success">
+							<input id="checkbox4" type="checkbox" class="open-close">
+							<label for="checkbox4"> Toggle Sidebar </label>
+						</div>
+					</li>
+				</ul>
+				<ul id="themecolors" class="m-t-20">
+					<li><b>With Light sidebar</b></li>
+					<li><a href="javascript:void(0)" theme="default" class="default-theme">1</a></li>
+					<li><a href="javascript:void(0)" theme="green" class="green-theme">2</a></li>
+					<li><a href="javascript:void(0)" theme="gray" class="yellow-theme">3</a></li>
+					<li><a href="javascript:void(0)" theme="blue" class="blue-theme working">4</a></li>
+					<li><a href="javascript:void(0)" theme="purple" class="purple-theme">5</a></li>
+					<li><a href="javascript:void(0)" theme="megna" class="megna-theme">6</a></li>
+					<li><b>With Dark sidebar</b></li>
+					<br/>
+					<li><a href="javascript:void(0)" theme="default-dark" class="default-dark-theme">7</a></li>
+					<li><a href="javascript:void(0)" theme="green-dark" class="green-dark-theme">8</a></li>
+					<li><a href="javascript:void(0)" theme="gray-dark" class="yellow-dark-theme">9</a></li>
+					<li><a href="javascript:void(0)" theme="blue-dark" class="blue-dark-theme">10</a></li>
+					<li><a href="javascript:void(0)" theme="purple-dark" class="purple-dark-theme">11</a></li>
+					<li><a href="javascript:void(0)" theme="megna-dark" class="megna-dark-theme">12</a></li>
+				</ul>
+				<ul class="m-t-20 chatonline">
+					<li><b>Chat option</b></li>
+					<li>
+						<a href="javascript:void(0)"><img src="admin//plugins/images/users/varun.jpg" alt="user-img" class="img-circle"> <span>Varun Dhavan <small class="text-success">online</small></span></a>
+					</li>
+					<li>
+						<a href="javascript:void(0)"><img src="admin//plugins/images/users/genu.jpg" alt="user-img" class="img-circle"> <span>Genelia Deshmukh <small class="text-warning">Away</small></span></a>
+					</li>
+					<li>
+						<a href="javascript:void(0)"><img src="admin//plugins/images/users/ritesh.jpg" alt="user-img" class="img-circle"> <span>Ritesh Deshmukh <small class="text-danger">Busy</small></span></a>
+					</li>
+					<li>
+						<a href="javascript:void(0)"><img src="admin//plugins/images/users/arijit.jpg" alt="user-img" class="img-circle"> <span>Arijit Sinh <small class="text-muted">Offline</small></span></a>
+					</li>
+					<li>
+						<a href="javascript:void(0)"><img src="admin//plugins/images/users/govinda.jpg" alt="user-img" class="img-circle"> <span>Govinda Star <small class="text-success">online</small></span></a>
+					</li>
+					<li>
+						<a href="javascript:void(0)"><img src="admin//plugins/images/users/hritik.jpg" alt="user-img" class="img-circle"> <span>John Abraham<small class="text-success">online</small></span></a>
+					</li>
+					<li>
+						<a href="javascript:void(0)"><img src="admin//plugins/images/users/john.jpg" alt="user-img" class="img-circle"> <span>Hritik Roshan<small class="text-success">online</small></span></a>
+					</li>
+					<li>
+						<a href="javascript:void(0)"><img src="admin//plugins/images/users/pawandeep.jpg" alt="user-img" class="img-circle"> <span>Pwandeep rajan <small class="text-success">online</small></span></a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>-->
+	<!-- /.right-sidebar -->
+</div>
+
+
+
+<!-- /.container-fluid -->
+
+</div>
+<!-- /#page-wrapper -->
+</div>
+<!-- /#wrapper -->
+<!-- jQuery -->
+<script src='{% static "admin/plugins/bower_components/jquery/dist/jquery.min.js" %}'></script>
+<!-- Bootstrap Core JavaScript -->
+<script src='{% static "admin/eliteadmin-university/bootstrap/dist/js/bootstrap.min.js" %}'></script>
+<!-- Menu Plugin JavaScript -->
+<script src='{% static "admin/plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.js" %}'></script>
+<!--slimscroll JavaScript -->
+<script src='{% static "admin/eliteadmin-university/js/jquery.slimscroll.js" %}'></script>
+<!--Wave Effects -->
+<script src='{% static "admin/eliteadmin-university/js/waves.js" %}'></script>
+<!-- Date Picker Plugin JavaScript -->
+<script src='{% static "admin/plugins/bower_components/bootstrap-datepicker/bootstrap-datepicker.min.js" %}'></script>
+<script type="text/javascript">
+        // Date Picker
+        jQuery('.mydatepicker').datepicker();
+    </script>
+    <!-- Custom Theme JavaScript -->
+    <script src='{% static "admin/eliteadmin-university/js/custom.min.js" %}'></script>
+    <script src='{% static "admin/eliteadmin-university/js/jasny-bootstrap.js" %}'></script>
+    <script src='{% static "admin/eliteadmin-university/js/mask.js" %}'></script>
+    <!--Style Switcher -->
+    <script src='{% static "admin/plugins/bower_components/styleswitcher/jQuery.style.switcher.js" %}'></script>
+
+</body>
+</html>

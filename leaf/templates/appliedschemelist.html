@@ -1,0 +1,35 @@
+{% extends "userhead.html" %}
+{% load static %}
+{% block content %}
+
+<p style="color: red;">{{msg}}</p>
+  <h1 class="text-center mb-5 text-white" style="text-shadow: 2px 2px 1px black;">Applied Scheme List</h1>
+            <div class="w-100 ">
+              <table class="table table-striped w-75 mx-auto bg-white">
+                <thead class="">
+       <tr >
+                            <th>Sl.no</th>
+                            
+                            <th>scheme Name</th>
+                            <th>scheme details</th>
+                            <th>Application Status</th>
+                        
+                          </tr>
+                          </thead>
+        
+        <tbody>
+           
+            {% for datas in data %}
+                                
+                                <tr>
+                                <td>{{ forloop.counter }}</td>
+                                 <td>{{datas.scheme.scheme_name}}</td>
+                                <td>{{datas.scheme.scheme_details}}</td>
+                                <td>{{datas.status}}</td>
+                                
+                           
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends "staffhead.html" %}
+{% load static %}
+{% block content %}
+
+<H2 style="color:#13bef0">Add Infrastructure</H2>
+<hr style="color:#13bef0"/>
+
+                <form class="form-horizontal" enctype="multipart/form-data" method="post" action="{% url 'Infrastructure' %}">
+                    {% csrf_token %}
+
+
+                    <table class="table table-responsive table-striped">
+                        <tr><td>
+                            Infrastructure name</td><td>
+                                <input type="text" class="form-control" name="t1" required id="focusedinput" placeholder="Infrastructure Name">
+                            </td></tr>
+                            <tr><td>
+                                Infrastructure details</td><td>
+                                    <textarea class="form-control" name="t2" required id="focusedinput" placeholder="description"></textarea>
+                                </td></tr>
+                                <tr><td>
+                                   Cost per day</td><td>
+                                        <input type="text" class="form-control" name="t3" required id="focusedinput" placeholder="Infrastructure cost">
+                                    </td></tr>
+                                    <tr><td colspan="2" style="text-align: center;">
+    
+
+
+                                        <button class="btn-success btn btn-lg" type="submit" name="submit">Appoint</button>
+                                        <input type="reset" value="Reset" class=" btn btn-warning btn-lg"/>
+                                    
+                                    </td></tr>
+                    </table>
+
+            </form>
+                               
+{% endblock %}

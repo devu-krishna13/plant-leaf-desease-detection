@@ -1,0 +1,39 @@
+{% extends "staffhead.html" %}
+{% load static %}
+{% block content %}
+<h2>Infrastructure List</h2>
+            <table class="table table-responsive table-striped">
+          <thead>
+       <tr >
+                            <th>Sl.no</th>
+                            
+                            <th>Infrastructure Name</th>
+                            <th>Infrastructure details</th>
+                            <th>Infrastructure cost</th>
+                            <th>User</th>
+                            <th>Status</th>
+                            <th colspan="2">Action</th>
+                          </tr>
+                          </thead>
+        
+        <tbody>
+           
+            {% for datas in data %}
+                                
+                                <tr>
+                                <td>{{ forloop.counter }}</td>
+                                 <td>{{datas.infrastructure.Infrastructure_name}}</td>
+                                <td>{{datas.infrastructure.Infrastructure_det}}</td>
+                                <td>{{datas.infrastructure.Infrastructure_cost}}</td>
+                                <td>{{datas.user.User_name}}</td>
+                                <td>{{datas.status}}</td>
+                                {% if datas.status == "pending verification" %}
+                                <td><a class="btn-primary btn" href="{% url 'approve_infra_booking' %}?id={{datas.booking_id}}">Approve</a></td>
+                                <td><a class="btn-danger btn" href="{% url 'reject_infra_booking' %}?id={{datas.booking_id}}">Reject</a></td>
+                                {% endif %}
+                           
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+{% endblock %}

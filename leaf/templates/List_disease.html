@@ -1,0 +1,36 @@
+{% extends "staffhead.html" %}
+{% load static %}
+{% block content %}
+<h2>Disease List</h2>
+            <table class="table table-responsive table-striped">
+          <thead>
+       <tr >
+                            <th>Sl.no</th>
+                            <th>Leaf </th>
+                            <th>Disease Name</th>
+                            <th>Disease Details</th>
+                            
+                            <th>Order In Model</th>
+                        
+                            <th >Action</th>
+                          </tr>
+                          </thead>
+        
+        <tbody>
+           
+            {% for datas in data %}
+                                
+                                <tr>
+                                <td>{{ forloop.counter }}</td>
+                                <td>{{datas.Leaf.Leaf_name}}</td>
+                                 <td>{{datas.Des_name}}</td>
+                                <td>{{datas.Des_Details}}</td>
+                                <td>{{datas.model_order}}</td>
+                                  <td><a class="btn-danger btn" href="{% url 'delete_dis' %}?id={{datas.Des_id}}">Remove</a></td>
+                                 
+                           
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+{% endblock %}

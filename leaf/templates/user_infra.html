@@ -1,0 +1,48 @@
+{% extends "userhead.html" %}
+{% load static %}
+{% block content %}
+<style>
+  body{
+    background: url('{% static "web/images/banner3.jpg" %}');
+    background-size: cover;
+    background-position: center;
+    background-repeat:no-repeat;
+    min-height: 90vh;
+  }
+</style>
+<h3 style="color: white;">{{msg}}</h3>
+  <h1 class="text-center mb-5 text-white" style="text-shadow: 2px 2px 1px black;">Infrastructure List</h1>
+            <div class="w-100 ">
+              <table class="table table-striped w-75 mx-auto bg-white">
+                <thead class="">
+             <tr >
+                                  <th>Sl.no</th>
+                                  
+                                  <th>Infrastructure Name</th>
+                                  <th>Infrastructure details</th>
+                                  <th>Infrastructure cost</th>
+                                
+                              
+                                  <th colspan="2">Action</th>
+                                </tr>
+                                </thead>
+              
+              <tbody>
+                 
+                  {% for datas in data %}
+                                      
+                                      <tr>
+                                      <td>{{ forloop.counter }}</td>
+                                       <td>{{datas.Infrastructure_name}}</td>
+                                      <td>{{datas.Infrastructure_det}}</td>
+                                      <td>{{datas.Infrastructure_cost}}</td>
+                                      
+                                        <td><a class="btn-danger btn" href="{% url 'book_infra' %}?id={{datas.Infrastructure_id}}">Book</a></td>
+                                      
+                                 
+                                      </tr>
+                                      {% endfor %}
+                                  </tbody>
+                              </table>
+            </div>
+{% endblock %}

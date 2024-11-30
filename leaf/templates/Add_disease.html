@@ -1,0 +1,46 @@
+{% extends "staffhead.html" %}
+{% load static %}
+{% block content %}
+<!---
+<H2 style="color:#13bef0">Generate model</H2>
+<hr style="color:#13bef0"/>
+<a href="{% url 'Generate' %}">Generate</a>
+-->
+                <form class="form-horizontal" enctype="multipart/form-data" method="post" action="{% url 'Manage_disease' %}">
+                    {% csrf_token %}
+                    <table class="table table-responsive table-striped">
+                        <tr><td>
+                            Leaf</td><td>
+                                <select name="f1" required id="f1" class="form-control" >
+                                    <option value="">-select-</option>
+                                    {%  for d in data %}
+                                    <option value="{{d.Leaf_id}}">{{d.Leaf_name}}</option>
+                                    {% endfor %}
+
+                                </select>
+                                
+                            </td></tr>
+                  <tr><td>
+                        Disease</td><td>
+                            <input type="text" class="form-control" name="t1" required id="focusedinput" placeholder="Disease Name">
+                        </td></tr>
+                        <tr><td>
+                            Disease Description</td><td>
+                                <textarea class="form-control" name="t2" required id="focusedinput" placeholder="Disease Description"></textarea>
+                            </td></tr>
+                            
+                         <tr><td>
+                                Disease order in model</td><td>
+                                    <input type="number" min="0" class="form-control" name="t3" required id="focusedinput" placeholder="Disease order in Model">
+                                </td></tr>
+                        <tr><td colspan="2" style="text-align: center;">
+    
+
+
+                            <button class="btn-success btn btn-lg" type="submit" name="submit">Add</button>
+                            <input type="reset" value="Reset" class=" btn btn-warning btn-lg"/>
+                        
+                        </td></tr>
+                        </table>
+                        </form>
+{% endblock %}

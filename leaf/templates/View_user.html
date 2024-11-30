@@ -1,0 +1,36 @@
+{% extends role %}
+{% load static %}
+{% block content %}
+          <h2>Manage User</h2>
+            <table class="table table-responsive table-striped">
+          <thead>
+       <tr >
+                            <th>Sl.no</th>
+                         
+                            <th>Name</th>
+                            <th>Address</th>
+                            
+                            <th>Phone No</th>
+                           
+                          
+                        
+                            <th >Action</th>
+                          </tr>
+                          </thead>
+        
+        <tbody>
+           
+            {% for datas in data %}
+                    
+                                <tr>
+                                <td>{{ forloop.counter }}</td>
+                            
+                                <td>{{datas.User_name}}</td>
+                                <td>{{datas.User_address}}</td>
+                                 <td>{{datas.User_phone}}</td>
+                                   <td><a class="btn-danger btn" href="{% url 'delete_user' %}?id={{datas.User_id}}">Remove</a></td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                        {% endblock %}

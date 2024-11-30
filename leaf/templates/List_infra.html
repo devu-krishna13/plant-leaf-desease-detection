@@ -1,0 +1,36 @@
+{% extends "staffhead.html" %}
+{% load static %}
+{% block content %}
+<h2>Infrastructure List</h2>
+            <table class="table table-responsive table-striped">
+          <thead>
+       <tr >
+                            <th>Sl.no</th>
+                            
+                            <th>Infrastructure Name</th>
+                            <th>Infrastructure details</th>
+                            <th>Infrastructure cost</th>
+                          
+                        
+                            <th colspan="2">Action</th>
+                          </tr>
+                          </thead>
+        
+        <tbody>
+           
+            {% for datas in data %}
+                                
+                                <tr>
+                                <td>{{ forloop.counter }}</td>
+                                 <td>{{datas.Infrastructure_name}}</td>
+                                <td>{{datas.Infrastructure_det}}</td>
+                                <td>{{datas.Infrastructure_cost}}</td>
+                                
+                                  <td><a class="btn-danger btn" href="{% url 'delete_infra' %}?id={{datas.Infrastructure_id}}">Remove</a></td>
+                                
+                           
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+{% endblock %}

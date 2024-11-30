@@ -1,0 +1,34 @@
+{% extends "adminhead.html" %}
+{% load static %}
+{% block content %}
+<h2>Scheme List</h2>
+            <table class="table table-responsive table-striped">
+          <thead>
+       <tr >
+                            <th>Sl.no</th>
+                            
+                            <th>scheme Name</th>
+                            <th>scheme details</th>
+                          
+                        
+                            <th colspan="2">Action</th>
+                          </tr>
+                          </thead>
+        
+        <tbody>
+           
+            {% for datas in data %}
+                                
+                                <tr>
+                                <td>{{ forloop.counter }}</td>
+                                 <td>{{datas.scheme_name}}</td>
+                                <td>{{datas.scheme_details}}</td>
+                                
+                        <td><a class="btn-danger btn" href="{% url 'delete_scheme' %}?id={{datas.scheme_id}}">Remove</a></td>
+                                
+                           
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+{% endblock %}
